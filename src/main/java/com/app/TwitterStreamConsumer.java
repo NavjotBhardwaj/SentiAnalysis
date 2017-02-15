@@ -33,12 +33,12 @@ public class TwitterStreamConsumer extends Thread {
             // Enter your consumer key and secret below
             OAuthService service = new ServiceBuilder()
                     .provider(TwitterApi.class)
-                    .apiKey("qFiiPwXFjaiRsFAq5OSYHFT0f")
-                    .apiSecret("V9t7qXkbjglS76TKy6Xw9U2fukb1Nh1xmtKKR30kXR6noap9Qe")
+                    .apiKey("")
+                    .apiSecret("")
                     .build();
 
             // Set your access token
-            Token accessToken = new Token("66266917-XNT9WqkdFO8TQz6VQeCQtYEZIBdgpp82tUxCrIcIW", "2v4EMHESOz4yeajmjj8788mkGa2UOLAeUR1nrJ27tlSek");
+            Token accessToken = new Token("", "");
 
             // Let's generate the request
             System.out.println("Connecting to Twitter Public Stream");
@@ -47,7 +47,7 @@ public class TwitterStreamConsumer extends Thread {
             request.addHeader("host", "stream.twitter.com");
             request.setConnectionKeepAlive(true);
             request.addHeader("user-agent", "Twitter Stream Reader");
-            request.addBodyParameter("track", "Bank of America, bofa, bofa_news, bofa_help, ROLB, BMB, Pingit, Ping-it, BarclaysMobileBanking, Barclays Live, Feature Store, Barclays, Barclaycard, BCS, BarclaysWealth, john mcfarlane, @Barclays, @Barclaysuk, hsbc, hsbc_press, citi, Citigroup Inc, RBS, Royal Bank Of Scotland, LLyods Bank, STAN, @StanChart, Santander, NatWest, Halifax, Tesco Bank"); // Set keywords you'd like to track here
+            request.addBodyParameter("track", ""); // Set keywords you'd like to track here
             service.signRequest(accessToken, request);
             Response response = request.send();
 
